@@ -28,7 +28,14 @@ Tracking Avancé : Utilisation de l'homographie pour identifier les quatre somme
 
 ## Méthodologie de Tracking
 
-### Prétraitement de l'Image : Correction de l'éclairage, filtrage et préparation de l'image pour un traitement optimal.
-### Masque sur la Feuille : Application d'un masque pour isoler la feuille de papier et ses caractéristiques.
-### Suivi du Rectangle de la Feuille : Maintien d'un suivi précis de la position et de l'orientation de la feuille.
-### Suivi des Éléments Importants : Détection des éléments du jeu, notamment à travers la détection des couleurs avec des seuils HSV spécifiques.
+### 1) Prétraitement de l'Image :
+Correction de l'éclairage, filtrage et préparation de l'image pour un traitement optimal.
+
+### 2) Masque sur la Feuille :
+Application d'un masque pour isoler la feuille de papier et ses caractéristiques.
+
+### 3) Suivi du Rectangle de la Feuille : 
+Maintien d'un suivi précis de la position et de l'orientation de la feuille.
+
+### 4) Suivi des Éléments Importants : 
+Détection des éléments du jeu, notamment à travers la détection des couleurs avec des seuils HSV spécifiques.
