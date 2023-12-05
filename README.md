@@ -15,9 +15,9 @@ Interactivité Augmentée : Ajout de petits papiers sur l'écran qui modifient l
 
 ### 2) Fonctionnement
 Le jeu repose sur la détection et le suivi de points spécifiques :
-Cercle bleu : Point de départ
-Octogone rouge : Zone de mort
-Triangle vert : Point de sortie
+- Cercle bleu : Point de départ
+- Octogone rouge : Zone de mort
+- Triangle vert : Point de sortie
 
 ![image](https://github.com/Jhinslain/AIA/assets/152390192/c3ef79ad-41c6-4045-bf67-1d831d69d1e4)
 
