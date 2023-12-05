@@ -21,8 +21,9 @@ Intégration d'éléments interactifs comme des bonus/malus.
 Le jeu fonctionnera avec des points de repère spécifiques tels que :
 
 Point supérieur droit et inférieur gauche du jeu.
-Point d'arrivée (trou de sortie).
-Point d'apparition de la balle.
+Point d'arrivée (triange vert).
+Point d'apparition de la balle (cercle bleu).
+Point de mort (octogone rouge)
 ![image](https://github.com/Jhinslain/AIA/assets/152390192/5380d7ba-ab68-4af2-9673-f371b33d03dd)
 
 ### 4. Idée de Tracking
