@@ -1,7 +1,7 @@
 # AIA
 Projet Analyse d'Image Avancée
 
-I.	Analyse du sujet
+##I.	Analyse du sujet
 
 1)	Introduction
 Afficher des informations, objets 3D sur une feuille placé devant la cam. Si la feuille bouge, les objets doivent bouger en temps réels. 
