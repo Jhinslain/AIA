@@ -23,6 +23,8 @@ Le jeu fonctionnera avec des points de repère spécifiques tels que :
 Point supérieur droit et inférieur gauche du jeu.
 Point d'arrivée (trou de sortie).
 Point d'apparition de la balle.
+![image](https://github.com/Jhinslain/AIA/assets/152390192/5380d7ba-ab68-4af2-9673-f371b33d03dd)
+
 ### 4. Idée de Tracking
 Utilisation de techniques telles que :
 
