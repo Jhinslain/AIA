@@ -1,52 +1,33 @@
-# Projet Analyse d'Image Avancée
+# Analyse d'Image Avancée : Jeu de Bille en Réalité Augmentée
 
-## I. Analyse du Sujet
-### 1. Introduction
-Ce projet vise à afficher des informations et objets 3D sur une feuille placée devant la caméra. L'objectif est de faire bouger ces objets en temps réel en fonction du mouvement de la feuille. Cela nécessite le scan des images capturées par la caméra pour identifier des points spécifiques et le suivi (tracking) du flux vidéo.
+## Introduction
+Ce projet vise à créer une expérience interactive en réalité augmentée où des objets 3D, tels que des billes, sont affichés sur une feuille de papier placée devant une caméra. L'objectif est de faire bouger ces objets en temps réel, synchronisés avec le mouvement de la feuille. Pour cela, le projet implique un scan minutieux des images capturées par la caméra et un suivi précis du flux vidéo.
 
-### 2. Idées
-Le concept principal est de développer un jeu de bille 3D dans un labyrinthe. Le jeu implique :
+### 1) Concept du Jeu
+Le jeu se présente comme un labyrinthe en 3D dans lequel une bille apparaît et doit être dirigée jusqu'à un trou de sortie. Ce défi est rendu possible en bougeant physiquement le plateau (la feuille de papier) sous la caméra. Les éléments clés du jeu sont :
 
-Apparition d'une bille et création d'un labyrinthe.
-Objectif de bouger le plateau pour diriger la bille vers la sortie en utilisant une physique réaliste.
-Rendu 3D en temps réel sur la vidéo.
-Idées Supplémentaires
-Plusieurs niveaux de jeu.
-Murs mobiles de différentes couleurs.
-Niveaux modifiables avec apparition/disparition de trous et murs.
-Difficulté adaptative.
-Gestion des hauteurs et sauts de la balle.
-Intégration d'éléments interactifs comme des bonus/malus.
-### 3. Fonctionnement
-Le jeu fonctionnera avec des points de repère spécifiques tels que :
+Plusieurs Niveaux : Différents niveaux de complexité et de design.
+Murs Mobiles et Colorés : Murs qui changent de position et de couleur pour diversifier le gameplay.
+Niveaux Modifiables : Possibilité d'ajouter ou de déplacer des trous et des murs pour renouveler l'expérience.
+Difficulté Adaptative : Le jeu s'adapte au niveau du joueur.
+Physique Réaliste : Gestion des hauteurs et des sauts de la balle en fonction du mouvement du plateau.
+Interactivité Augmentée : Ajout de petits papiers sur l'écran qui modifient le jeu, apportant des bonus ou des malus.
 
-Point supérieur droit et inférieur gauche du jeu.
-Point d'arrivée (triange vert).
-Point d'apparition de la balle (cercle bleu).
-Point de mort (octogone rouge)
-![image](https://github.com/Jhinslain/AIA/assets/152390192/5380d7ba-ab68-4af2-9673-f371b33d03dd)
+### 2) Fonctionnement
+Le jeu repose sur la détection et le suivi de points spécifiques :
+Cercle bleu : Point de départ
+Octogone rouge : Zone de mort
+Triangle vert : Point de sortie
+![image](https://github.com/Jhinslain/AIA/assets/152390192/c3ef79ad-41c6-4045-bf67-1d831d69d1e4)
 
-### 4. Idée de Tracking
-Utilisation de techniques telles que :
+### 3) Points de Repère : Les points clés du jeu sont le coin supérieur droit, le coin inférieur gauche, le trou d'arrivée et le point d'apparition de la balle.
+Tracking Avancé : Utilisation de l'homographie pour identifier les quatre sommets du plateau de jeu et suivi d'objets pré-définis.
 
-Homographie : Identification des 4 sommets du labyrinthe.
-Reconnaissance d'objets connus sur le plan avec des dimensions préétablies.
-### 5. Repère
-Le système se basera principalement sur les données capturées par la caméra pour le suivi des objets.
+![image](https://github.com/Jhinslain/AIA/assets/152390192/b0cfd9b8-9b34-4c76-b099-cca2740bd407)
 
-### 6. Suivi Robuste des Points d'Intérêt
-Le suivi impliquera :
+## Méthodologie de Tracking
 
-Prétraitement de l'image (ajustements de l'éclairage, filtrage).
-Détection des points d'intérêt.
-Suivi des points à travers les différentes frames.
-Validation et correction en temps réel.
-Possibilité de calibration et réinitialisation par l'utilisateur.
-## II. Implémentation
-Le projet est développé en C++ en utilisant OpenCV, GLFW et GLEW. Les étapes clés de l'implémentation incluent :
-
-Initialisation et vérification de la caméra.
-Capture et prétraitement des frames.
-Application de masques pour isoler les éléments d'intérêt.
-Utilisation de techniques de tracking avancées.
-Dessin et affichage des éléments interactifs en temps réel.
+### Prétraitement de l'Image : Correction de l'éclairage, filtrage et préparation de l'image pour un traitement optimal.
+### Masque sur la Feuille : Application d'un masque pour isoler la feuille de papier et ses caractéristiques.
+### Suivi du Rectangle de la Feuille : Maintien d'un suivi précis de la position et de l'orientation de la feuille.
+### Suivi des Éléments Importants : Détection des éléments du jeu, notamment à travers la détection des couleurs avec des seuils HSV spécifiques.
