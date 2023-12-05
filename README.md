@@ -18,6 +18,7 @@ Le jeu repose sur la détection et le suivi de points spécifiques :
 Cercle bleu : Point de départ
 Octogone rouge : Zone de mort
 Triangle vert : Point de sortie
+
 ![image](https://github.com/Jhinslain/AIA/assets/152390192/c3ef79ad-41c6-4045-bf67-1d831d69d1e4)
 
 ### 3) Points de Repère : Les points clés du jeu sont le coin supérieur droit, le coin inférieur gauche, le trou d'arrivée et le point d'apparition de la balle.
