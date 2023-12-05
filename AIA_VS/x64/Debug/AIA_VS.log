@@ -1,0 +1,38 @@
+﻿  AIA_VS.cpp
+G:\Mon Drive\School\S9\Analyse d'image avancée\AIA_VS\AIA_VS.cpp(78,67): warning C4244: 'argument' : conversion de '_Tp' en '_Tp', perte possible de données
+          with
+          [
+              _Tp=double
+          ]
+          and
+          [
+              _Tp=int
+          ]
+G:\Mon Drive\School\S9\Analyse d'image avancée\AIA_VS\AIA_VS.cpp(78,55): warning C4244: 'argument' : conversion de '_Tp' en '_Tp', perte possible de données
+          with
+          [
+              _Tp=double
+          ]
+          and
+          [
+              _Tp=int
+          ]
+G:\Mon Drive\School\S9\Analyse d'image avancée\AIA_VS\AIA_VS.cpp(78,47): warning C4244: 'argument' : conversion de '_Tp' en '_Tp', perte possible de données
+          with
+          [
+              _Tp=double
+          ]
+          and
+          [
+              _Tp=int
+          ]
+G:\Mon Drive\School\S9\Analyse d'image avancée\AIA_VS\AIA_VS.cpp(78,39): warning C4244: 'argument' : conversion de '_Tp' en '_Tp', perte possible de données
+          with
+          [
+              _Tp=double
+          ]
+          and
+          [
+              _Tp=int
+          ]
+  AIA_VS.vcxproj -> G:\Mon Drive\School\S9\Analyse d'image avancée\AIA_VS\x64\Debug\AIA_VS.exe
