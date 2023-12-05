@@ -1,52 +1,49 @@
-# AIA
-Projet Analyse d'Image Avancée
+# Projet Analyse d'Image Avancée
 
-## I.	Analyse du sujet
+## I. Analyse du Sujet
+### 1. Introduction
+Ce projet vise à afficher des informations et objets 3D sur une feuille placée devant la caméra. L'objectif est de faire bouger ces objets en temps réel en fonction du mouvement de la feuille. Cela nécessite le scan des images capturées par la caméra pour identifier des points spécifiques et le suivi (tracking) du flux vidéo.
 
-1)	Introduction
-Afficher des informations, objets 3D sur une feuille placé devant la cam. Si la feuille bouge, les objets doivent bouger en temps réels. 
-Il faut donc scanner les images à la caméra pour trouver des points spécifiques. Il faut aussi analyser le flux vidéo pour le tracking.
+### 2. Idées
+Le concept principal est de développer un jeu de bille 3D dans un labyrinthe. Le jeu implique :
 
-2)	Idées
-Afficher un jeu de bille 3D dans un labyrinthe. Une bille apparait, un labyrinthe est créé, le but bouger le plateau pour faire bouger la bille avec une physique jusqu’au trou de sortie.
-La 3D doit être reproduit en temps réel sur la vidéo.
-Idées supplémentaires :
--	Plusieurs niveaux
--	Murs qui bougent avec différentes couleurs
--	Niveaux amovibles (trou/ mur apparaissent / bougent)
--	Difficulté adaptative
--	Hauteurs / saut de la balle avec mouvement du plateau
--	Ajout de petit papier par-dessus l’écran qui modifie le jeu. Comme des petit bonus/malus. 
+Apparition d'une bille et création d'un labyrinthe.
+Objectif de bouger le plateau pour diriger la bille vers la sortie en utilisant une physique réaliste.
+Rendu 3D en temps réel sur la vidéo.
+Idées Supplémentaires
+Plusieurs niveaux de jeu.
+Murs mobiles de différentes couleurs.
+Niveaux modifiables avec apparition/disparition de trous et murs.
+Difficulté adaptative.
+Gestion des hauteurs et sauts de la balle.
+Intégration d'éléments interactifs comme des bonus/malus.
+### 3. Fonctionnement
+Le jeu fonctionnera avec des points de repère spécifiques tels que :
 
-3)	Fonctionnement
+Point supérieur droit et inférieur gauche du jeu.
+Point d'arrivée (trou de sortie).
+Point d'apparition de la balle.
+### 4. Idée de Tracking
+Utilisation de techniques telles que :
 
- Point supérieur droite du jeu
- Point inférieur gauche du jeu
-  Trou d’arrivé
- 	 Point d’apparition de la balle
+Homographie : Identification des 4 sommets du labyrinthe.
+Reconnaissance d'objets connus sur le plan avec des dimensions préétablies.
+### 5. Repère
+Le système se basera principalement sur les données capturées par la caméra pour le suivi des objets.
 
+### 6. Suivi Robuste des Points d'Intérêt
+Le suivi impliquera :
 
+Prétraitement de l'image (ajustements de l'éclairage, filtrage).
+Détection des points d'intérêt.
+Suivi des points à travers les différentes frames.
+Validation et correction en temps réel.
+Possibilité de calibration et réinitialisation par l'utilisateur.
+## II. Implémentation
+Le projet est développé en C++ en utilisant OpenCV, GLFW et GLEW. Les étapes clés de l'implémentation incluent :
 
-4)	Idée de tracking :
--	Homographie : prendre les 4 sommets et savoir lesquels sont
-
--	Prendre des objets sur le plan qu’on connait à l’avance et qu’on connait les mesures
-
-5)	Repére
-	Caméra 
-6)	Suivis robuste de points d’intérêts 
-
-1. Prétraitement de l'Image
-•	Correction d’éclairage : Ajuster les niveaux de luminosité et de contraste pour gérer les variations d'éclairage.
-•	Filtrage : Utiliser des filtres (par exemple, un filtre Gaussien) pour réduire le bruit dans l'image.
-2. Détection des Points d'Intérêt
-•	Utiliser une méthode robuste pour détecter vos points d'intérêt (par exemple, les croix dans les coins de votre feuille). Vous pouvez utiliser des méthodes de détection de contours (comme expliqué dans les réponses précédentes) ou d'autres techniques de détection de caractéristiques.
-•	Validation : Assurer une vérification de la cohérence des points trouvés (par exemple, s'assurer qu'ils forment un quadrilatère d'une certaine forme ou taille).
-3. Suivi des Points
-•	Association : Vous devez garder une trace de quel point correspond à quelle caractéristique d'un frame à l'autre.
-•	Prédiction : Vous pouvez utiliser des méthodes de prédiction (comme le filtre de Kalman) pour estimer où vos points d'intérêt seront dans la frame suivante, ce qui peut aider à maintenir un suivi robuste même si la détection des points d'intérêt échoue temporairement.
-•	Correction : Si vos points bougent d'une manière inattendue, vous devrez peut-être corriger les estimations de leurs positions.
-•	Vérification : Vous devez également vérifier constamment la validité des points suivis pour assurer qu'ils correspondent toujours aux caractéristiques que vous essayez de suivre.
-4. Validation par l'Utilisateur
-•	Calibration : Permettre à l'utilisateur de valider ou de corriger les points suivis peut améliorer la robustesse du suivi en évitant les erreurs de suivi cumulatives.
-•	Réinitialisation : Offrir un mécanisme permettant de réinitialiser le suivi si jamais il devient incorrect ou si les points perdent leur suivi.
+Initialisation et vérification de la caméra.
+Capture et prétraitement des frames.
+Application de masques pour isoler les éléments d'intérêt.
+Utilisation de techniques de tracking avancées.
+Dessin et affichage des éléments interactifs en temps réel.
